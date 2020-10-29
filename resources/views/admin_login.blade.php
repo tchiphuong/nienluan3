@@ -1,58 +1,85 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Đăng nhập hệ thống</title>
+    <title>Phuong Shop Admin</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- bootstrap-css -->
-    <link rel="stylesheet" href="{{asset('public/backend/css/bootstrap.min.css')}}" >
-    <!-- //bootstrap-css -->
-    <!-- Custom CSS -->
-    <link href="{{asset('public/backend/css/style.css')}}" rel='stylesheet' type='text/css' />
-    <link href="{{asset('public/backend/css/style-responsive.css')}}" rel="stylesheet"/>
-    <!-- font CSS -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- font-awesome icons -->
-    <link rel="stylesheet" href="{{asset('public/backend/css/font.css')}}" type="text/css"/>
-    <link href="{{asset('public/backend/css/font-awesome.css')}}" rel="stylesheet">
-    <!-- //font-awesome icons -->
-    <script src="{{asset('public/backend/js/jquery2.0.3.min.js')}}"></script>
+{{--    <link rel="icon" type="image/png" href="{{asset('public/backend/images/icons/favicon.ico')}}"/>--}}
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/vendor/animate/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/vendor/css-hamburgers/hamburgers.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/vendor/animsition/css/animsition.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/vendor/select2/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/vendor/daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('public/backend/css/main.css')}}">
 </head>
 <body>
-<div class="log-w3">
-    <div class="w3layouts-main">
-        <h2>Đăng nhập</h2>
-        <form action="{{URL::to('/admin-dashboard')}}" method="post">
-            {{ csrf_field() }}
-            <input type="text" class="ggg" name="admin_email" placeholder="Email" required="">
-            <input type="password" class="ggg" name="admin_password" placeholder="Mật khẩu" required="">
-            <span><input type="checkbox" /> Nhớ mật khẩu</span>
-            <h6><a href="#">Quên mật khẩu</a></h6>
-            <div class="clearfix"></div>
-            <?php
-            $message = Session::get('message');
-            if($message){
-                echo '<span style="width: 100%; color: red;">'.$message.'</span>';
-                Session::put('message',null);
-            }
-            ?>
-            <input type="submit" value="Đăng nhập ngay" name="login">
-        </form>
-{{--        <p>Don't Have an Account ?<a href="registration.html">Create an account</a></p>--}}
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+            <form class="login100-form validate-form" action="{{URL::to('/admin-dashboard')}}" method="post">
+                {{ csrf_field() }}
+					<span class="login100-form-title p-b-33 font-weight-bold">
+						Đăng nhập hệ thống
+					</span>
+
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="admin_email" placeholder="Email">
+                    <span class="focus-input100-1"></span>
+                    <span class="focus-input100-2"></span>
+                </div>
+
+                <div class="wrap-input100 rs1 validate-input m-t-20" data-validate="Password is required">
+                    <input class="input100" type="password" name="admin_password" placeholder="Mật khẩu">
+                    <span class="focus-input100-1"></span>
+                    <span class="focus-input100-2"></span>
+                </div>
+
+                <div class="container-login100-form-btn m-t-20">
+                    <button class="login100-form-btn bg-gradient-primary" name="login" type="submit">
+                        Đăng nhập ngay
+                    </button>
+                </div>
+
+{{--                <div class="text-center p-t-45 p-b-4">--}}
+{{--						<span class="txt1">--}}
+{{--							Quên--}}
+{{--						</span>--}}
+
+{{--                    <a href="#" class="txt2 hov1">--}}
+{{--                        Tài khoản / Mật khẩu?--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+
+{{--                <div class="text-center">--}}
+{{--						<span class="txt1">--}}
+{{--							Tạo tài khoản mới?--}}
+{{--						</span>--}}
+
+{{--                    <a href="#" class="txt2 hov1">--}}
+{{--                        Đăng ký--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+            </form>
+        </div>
     </div>
 </div>
-<script src="{{asset('public/backend/js/bootstrap.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('public/backend/js/scripts.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{asset('public/backend/js/flot-chart/excanvas.min.js')}}"></script><![endif]-->
-<script src="{{asset('public/backend/js/jquery.scrollTo.js')}}"></script>
+
+
+
+<script src="{{asset('public/backend/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('public/backend/vendor/animsition/js/animsition.min.j')}}s"></script>
+<script src="{{asset('public/backend/vendor/bootstrap/js/popper.js')}}"></script>
+<script src="{{asset('public/backend/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/backend/vendor/select2/select2.min.js')}}"></script>
+<script src="{{asset('public/backend/vendor/daterangepicker/moment.min.js')}}"></script>
+<script src="{{asset('public/backend/vendor/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('public/backend/vendor/countdowntime/countdowntime.js')}}"></script>
+<script src="{{asset('public/backend/js/main.js')}}"></script>
+
 </body>
 </html>

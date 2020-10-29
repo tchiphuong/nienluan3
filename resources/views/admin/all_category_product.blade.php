@@ -1,5 +1,51 @@
 @extends('admin_layout')
 @section('admin_content')
+{{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">--}}
+{{--    <legend>TẤT CẢ DANH MỤC</legend>--}}
+{{--    <div class="container">--}}
+{{--        <div class="table-responsive">--}}
+{{--        <table class="table">--}}
+{{--            <thead class="thead-dark">--}}
+{{--            <a href="{{URL::to('/add-category-product')}}" class="btn btn-primary btn-xs pull-right"><b>+</b> Thêm mới</a>--}}
+{{--            <tr>--}}
+{{--                <th scope="col">Tên danh mục</th>--}}
+{{--                <th scope="col">Hiển thị / Ẩn</th>--}}
+{{--                <th scope="col" class="text-center">Hành động</th>--}}
+{{--            </tr>--}}
+{{--            </thead>--}}
+{{--            @foreach($all_category_product as $key => $cate_pro)--}}
+{{--            <tr>--}}
+{{--                <td>--}}
+{{--                    {{$cate_pro->category_name}}--}}
+{{--                </td>--}}
+{{--                <td>--}}
+{{--                    <span class="text-ellipsis">--}}
+{{--                        @if($cate_pro->category_status == 0)--}}
+{{--                            <a href="{{URL::to('/show-category-product/'.$cate_pro -> category_id)}}">--}}
+{{--                                <i class="fa fa-eye-slash" style="color: red"></i>--}}
+{{--                                <span class="glyphicon glyphicon-edit"></span> Chỉnh sửa--}}
+{{--                            </a>--}}
+{{--                        @else--}}
+{{--                            <a href="{{URL::to('/hide-category-product/'.$cate_pro -> category_id)}}">--}}
+{{--                                <i class="fa fa-eye" style="color: black"></i>--}}
+{{--                            </a>--}}
+{{--                        @endif--}}
+{{--                    </span>--}}
+{{--                </td>--}}
+{{--                <td class="text-center">--}}
+{{--                    <a class='btn btn-info btn-xs' href="{{URL::to('/edit-category-product/'.$cate_pro -> category_id)}}" name="edit_category_product">--}}
+{{--                        <span class="glyphicon glyphicon-edit"></span> Chỉnh sửa--}}
+{{--                    </a>--}}
+{{--                    <a class="btn btn-danger btn-xs" href="{{URL::to('/delete-category-product/'.$cate_pro -> category_id)}}" name="dalete_category_product">--}}
+{{--                        <span class="glyphicon glyphicon-remove"></span> Xóa--}}
+{{--                    </a>--}}
+{{--                </td>--}}
+{{--            </tr>--}}
+{{--            @endforeach--}}
+{{--        </table>--}}
+{{--    </div>--}}
+{{--    </div>--}}
+
     <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -50,16 +96,17 @@
                     <td>
                         <span class="text-ellipsis">
                             @if($cate_pro->category_status == 0)
-                                Ẩn
+                                hide
+                                <a href="{{URL::to('/show-category-product/'.$cate_pro -> category_id)}}"><i class="fa fa-eye-slash" style="color: red"></i></a>
                             @else
-                                Hiển thị
+                                <a href="{{URL::to('/hide-category-product/'.$cate_pro -> category_id)}}"><i class="fa fa-eye" style="color: black"></i></a>
                             @endif
                         </span>
                     </td>
 
                     <td>
-                        <a href="/edit-category-product" name="edit_category_product" class="active" ui-toggle-class=""><i class="fa fa-pencil text-success text-active"></i></a>
-                        <a href="/dalete-category-product" name="dalete_category_product" class="active" ui-toggle-class=""><i class="fa fa-trash text-danger text"></i></a>
+                        <a href="{{URL::to('/edit-category-product/'.$cate_pro -> category_id)}}" name="edit_category_product" class="active" ui-toggle-class=""><i class="fa fa-pencil text-success text-active"></i></a>
+                        <a href="{{URL::to('/delete-category-product/'.$cate_pro -> category_id)}}" name="dalete_category_product" class="active" ui-toggle-class=""><i class="fa fa-trash text-danger text"></i></a>
                     </td>
                 </tr>
                 @endforeach

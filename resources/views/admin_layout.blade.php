@@ -112,7 +112,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             @yield('admin_content')
         </section>
         <!-- footer -->
-        <div class="footer">
+        <div class="footer bottom-0">
             <div class="wthree-copyright">
                 <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
             </div>

@@ -24,4 +24,12 @@ Route::post('/admin-dashboard',[\App\Http\Controllers\AdminController::class,'da
 //category-product
 Route::get('/add-category-product', [\App\Http\Controllers\CategoryProduct::class,'add_category_product']);
 Route::get('/all-category-product', [\App\Http\Controllers\CategoryProduct::class, 'all_category_product']);
+Route::get('/edit-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'edit_category_product']);
+Route::get('/delete-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'delete_category_product']);
+
+Route::get('/show-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'show_category_product']);
+Route::get('/hide-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'hide_category_product']);
+
+
 Route::post('/save-category-product', [\App\Http\Controllers\CategoryProduct::class, 'save_category_product']);
+Route::post('/update-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'update_category_product']);
