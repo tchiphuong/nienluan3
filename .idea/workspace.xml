@@ -23,128 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="020c6fb9-d823-47a0-823c-a6b56537d1d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/JosefinSans-ThinItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/JosefinSans/OFL.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-ExtraBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/OpenSans/OpenSans-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/path.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/less/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/oswald/Oswald-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/oswald/Oswald-ExtraLight.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/oswald/Oswald-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/oswald/Oswald-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/oswald/Oswald-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/fonts/oswald/Oswald-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/images/bg-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/images/icons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/images/icons/map-marker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/images/img-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/js/map-custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/animate/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/animsition/css/animsition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/animsition/css/animsition.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/animsition/js/animsition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/animsition/js/animsition.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/bootstrap/js/tooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/countdowntime/countdowntime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/daterangepicker/daterangepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/daterangepicker/daterangepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/daterangepicker/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/daterangepicker/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/jquery/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/perfect-scrollbar/perfect-scrollbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/select2/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/backend/vendor/select2/select2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/edit_category_product.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/add_brand_product.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryProduct.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/all_category_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/all_category_product.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -272,12 +154,15 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1in0V1DSfv3lRrZ7rGPKPcrZaMY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
@@ -324,6 +209,8 @@
       <workItem from="1603955052729" duration="251000" />
       <workItem from="1603973650104" duration="1942000" />
       <workItem from="1603976241113" duration="500000" />
+      <workItem from="1604072422886" duration="10000" />
+      <workItem from="1604323731688" duration="2636000" />
     </task>
     <servers />
   </component>
@@ -342,6 +229,9 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="770" y="399" key="#Composer" timestamp="1602528105411">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -359,10 +249,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602528216999" />
-    <state x="1274" y="447" key="NewPhpFileDialog" timestamp="1603910099966">
+    <state x="566" y="469" key="NewPhpFileDialog" timestamp="1604327622370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1274" y="447" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603910099966" />
+    <state x="566" y="469" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604327622370" />
     <state x="721" y="67" key="SettingsEditor" timestamp="1603567070802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

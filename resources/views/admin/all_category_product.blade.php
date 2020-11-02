@@ -96,7 +96,6 @@
                     <td>
                         <span class="text-ellipsis">
                             @if($cate_pro->category_status == 0)
-                                hide
                                 <a href="{{URL::to('/show-category-product/'.$cate_pro -> category_id)}}"><i class="fa fa-eye-slash" style="color: red"></i></a>
                             @else
                                 <a href="{{URL::to('/hide-category-product/'.$cate_pro -> category_id)}}"><i class="fa fa-eye" style="color: black"></i></a>
@@ -106,7 +105,7 @@
 
                     <td>
                         <a href="{{URL::to('/edit-category-product/'.$cate_pro -> category_id)}}" name="edit_category_product" class="active" ui-toggle-class=""><i class="fa fa-pencil text-success text-active"></i></a>
-                        <a href="{{URL::to('/delete-category-product/'.$cate_pro -> category_id)}}" name="dalete_category_product" class="active" ui-toggle-class=""><i class="fa fa-trash text-danger text"></i></a>
+                        <a href="{{URL::to('/delete-category-product/'.$cate_pro -> category_id)}}" name="dalete_category_product" class="active" ui-toggle-class="" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash text-danger text"></i></a>
                     </td>
                 </tr>
                 @endforeach

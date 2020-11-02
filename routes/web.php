@@ -26,10 +26,19 @@ Route::get('/add-category-product', [\App\Http\Controllers\CategoryProduct::clas
 Route::get('/all-category-product', [\App\Http\Controllers\CategoryProduct::class, 'all_category_product']);
 Route::get('/edit-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'edit_category_product']);
 Route::get('/delete-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'delete_category_product']);
-
 Route::get('/show-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'show_category_product']);
 Route::get('/hide-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'hide_category_product']);
-
-
 Route::post('/save-category-product', [\App\Http\Controllers\CategoryProduct::class, 'save_category_product']);
 Route::post('/update-category-product/{category_product_id}', [\App\Http\Controllers\CategoryProduct::class, 'update_category_product']);
+
+
+//brand-product
+Route::get('/add-brand-product', [\App\Http\Controllers\BrandProduct::class,'add_brand_product']);
+Route::get('/all-brand-product', [\App\Http\Controllers\BrandProduct::class, 'all_brand_product']);
+Route::get('/edit-brand-product/{brand_product_id}', [\App\Http\Controllers\BrandProduct::class, 'edit_brand_product']);
+Route::get('/delete-brand-product/{brand_product_id}', [\App\Http\Controllers\BrandProduct::class, 'delete_brand_product']);
+Route::get('/show-brand-product/{brand_product_id}', [\App\Http\Controllers\BrandProduct::class, 'show_brand_product']);
+Route::get('/hide-brand-product/{brand_product_id}', [\App\Http\Controllers\BrandProduct::class, 'hide_brand_product']);
+Route::post('/save-brand-product', [\App\Http\Controllers\BrandProduct::class, 'save_brand_product']);
+Route::post('/update-brand-product/{brand_product_id}', [\App\Http\Controllers\BrandProduct::class, 'update_brand_product']);
+
