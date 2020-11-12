@@ -42,3 +42,13 @@ Route::get('/hide-brand-product/{brand_product_id}', [\App\Http\Controllers\Bran
 Route::post('/save-brand-product', [\App\Http\Controllers\BrandProduct::class, 'save_brand_product']);
 Route::post('/update-brand-product/{brand_product_id}', [\App\Http\Controllers\BrandProduct::class, 'update_brand_product']);
 
+//product
+Route::get('/add-product', [\App\Http\Controllers\BrandProduct::class,'add_product']);
+Route::get('/all-product', [\App\Http\Controllers\BrandProduct::class, 'all_product']);
+Route::get('/edit-product/{product_id}', [\App\Http\Controllers\BrandProduct::class, 'edit_product']);
+Route::get('/delete-product/{product_id}', [\App\Http\Controllers\BrandProduct::class, 'delete_product']);
+Route::get('/show-product/{product_id}', [\App\Http\Controllers\BrandProduct::class, 'show_product']);
+Route::get('/hide-product/{product_id}', [\App\Http\Controllers\BrandProduct::class, 'hide_product']);
+Route::post('/save-product', [\App\Http\Controllers\BrandProduct::class, 'save_product']);
+Route::post('/update-product/{product_id}', [\App\Http\Controllers\BrandProduct::class, 'update_product']);
+
