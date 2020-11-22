@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Phuong Shop</title>
+</head>
+
+<body>
+    <!-- header -->
+    <section>
+        <!-- <div class="header">
+            <div class="header-left">
+                <form action="">
+                    <input type="text">
+                </form>
+            </div>
+            <div class="header-center">
+                <a href="#">
+                    <img class="logo" src="images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="header-right">
+                <div class="login">
+                    <a>
+                        <i class="fa fa-user-circle"></i>
+                    </a>
+                </div>
+                <div class="cart">
+                    <a>
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div> -->
+        
+        <div class="nav-bar">
+            <div class="nav-list">
+                <ul class="nav-item active text-nav">Trang chủ</ul>
+                <ul class="nav-item text-nav">Nam
+                    <i class="fa fa-caret-down icon"></i>
+                        <li" class="nav-sub text-nav"><a href="#">Áo sơ mi nam</a></li>
+                        <li class="nav-sub text-nav"><a href="#">Quần tây nam</a></li>
+                </ul>
+                <ul class="nav-item">Nữ
+                    <i class="fa fa-caret-down icon"></i>
+                    <li class="nav-sub text-nav"><a href="#">Áo sơ mi nữ</a></li>
+                    <li class="nav-sub text-nav"><a href="#">Quần tây nữ</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- content -->
+    <section>
+
+    </section>
+
+    <!-- footer -->
+    <section>
+
+    </section>
+</body>
+</html>
