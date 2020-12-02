@@ -1,231 +1,111 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Trình quản lý</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- bootstrap-css -->
-    <link rel="stylesheet" href="{{asset('public/backend/css/bootstrap.min.css')}}" >
-    <!-- //bootstrap-css -->
-    <!-- Custom CSS -->
-    <link href="{{asset('public/backend/css/style.css')}}" rel='stylesheet' type='text/css' />
-    <link href="{{asset('public/backend/css/style-responsive.css')}}" rel="stylesheet"/>
-    <!-- font CSS -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- font-awesome icons -->
-    <link rel="stylesheet" href="{{asset('public/backend/css/font.css')}}" type="text/css"/>
-    <link href="{{asset('public/backend/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('public/backend/css/morris.css')}}" type="text/css"/>
-    <!-- calendar -->
-    <link rel="stylesheet" href="{{asset('public/backend/css/monthly.css')}}">
-    <!-- //calendar -->
-    <!-- //font-awesome icons -->
-    <script src="{{asset('public/backend/js/jquery2.0.3.min.js')}}"></script>
-    <script src="{{asset('public/backend/js/raphael-min.js')}}"></script>
-    <script src="{{asset('public/backend/js/morris.js')}}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{asset('public/backend/css/main.css')}}">
+    <link href="{{asset('public/backend/css/fontawesome.css')}}" rel="stylesheet">
+    <link href="{{asset('public/backend/css/brands.css')}}" rel="stylesheet">
+    <link href="{{asset('public/backend/css/solid.css')}}" rel="stylesheet">
+
 </head>
 <body>
-<section id="container">
-    <!--header start-->
-    <header class="header fixed-top clearfix">
-        <!--logo start-->
-        <div class="brand">
-            <a href="#" class="logo">ADMIN
-            </a>
-            <div class="sidebar-toggle-box">
-                <div class="fa fa-bars"></div>
-            </div>
-        </div>
-        <!--logo end-->
-
-        <div class="top-nav clearfix">
-            <!--search & user info start-->
-            <ul class="nav pull-right top-menu">
-                <li>
-                    <input type="text" class="form-control search" placeholder=" Search">
-                </li>
-                <!-- user login dropdown start-->
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <img alt="" src="{{asset('public/backend/images/3.png')}}">
-                        <span class="username">
+<div class="wrapper">
+    <div class="container">
+        <div class="dashboard">
+            <div class="left">
+                    <span class="left__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                <div class="left__content">
+                    <div class="left__logo">ADMIN</div>
+                    <div class="left__profile">
+                        <div class="left__image"><img src="{{asset('public/backend/assets/admin.jpg')}}" alt=""></div>
+                        <p class="left__name">
                             <?php
                             $admin_name = Session::get('admin_name');
                             if($admin_name){
                                 echo $admin_name;
                             }
                             ?>
-                        </span>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu extended logout">
-                        <li><a href="#"><i class=" fa fa-suitcase"></i>Thông tin</a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i> Cài đặt</a></li>
-                        <li><a href="{{URL::to('/logout')}}"><i class="fa fa-key"></i>Đăng xuất</a></li>
+                        </p>
+                    </div>
+                    <ul class="left__menu">
+                        <li class="left__menuItem">
+                            <a href="{{URL::to('/dashboard')}}" class="left__title"><img src="{{asset('public/backend/assets/icon-dashboard.svg')}}" alt="">Dashboard</a>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-tag.svg')}}" alt="">Sản Phẩm<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="{{URL::to('/add-product')}}">Chèn Sản Phẩm</a>
+                                <a class="left__link" href="{{URL::to('/all-product')}}">Xem Sản Phẩm</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-edit.svg')}}" alt="">Danh Mục SP<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="{{URL::to('/add-category-product')}}">Chèn Danh Mục</a>
+                                <a class="left__link" href="{{URL::to('/all-category-product')}}">Xem Danh Mục</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Nhãn hiệu<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="{{URL::to('/add-brand-product')}}">Chèn Nhãn hiệu</a>
+                                <a class="left__link" href="{{URL::to('/all-brand-product')}}">Xem Nhãn hiệu</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Thể Loại<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="insert_category.html">Chèn Thể Loại</a>
+                                <a class="left__link" href="view_category.html">Xem Thể Loại</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-settings.svg')}}" alt="">Slide<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="insert_slide.html">Chèn Slide</a>
+                                <a class="left__link" href="view_slides.html">Xem Slide</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Coupons<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="insert_coupon.html">Chèn Coupon</a>
+                                <a class="left__link" href="view_coupons.html">Xem Coupons</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <a href="view_customers.html" class="left__title"><img src="{{asset('public/backend/assets/icon-users.svg')}}" alt="">Khách Hàng</a>
+                        </li>
+                        <li class="left__menuItem">
+                            <a href="view_orders.html" class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Đơn Đặt Hàng</a>
+                        </li>
+                        <li class="left__menuItem">
+                            <a href="edit_css.html" class="left__title"><img src="{{asset('public/backend/assets/icon-pencil.svg')}}" alt="">Chỉnh CSS</a>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-user.svg')}}" alt="">Admin<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="insert_admin.html">Chèn Admin</a>
+                                <a class="left__link" href="view_admins.html">Xem Admins</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <a href="{{URL::to('/logout')}}" class="left__title"><img src="{{asset('public/backend/assets/icon-logout.svg')}}" alt="">Đăng Xuất</a>
+                        </li>
                     </ul>
-                </li>
-                <!-- user login dropdown end -->
-
-            </ul>
-            <!--search & user info end-->
-        </div>
-    </header>
-    <!--header end-->
-    <!--sidebar start-->
-    <aside>
-        <div id="sidebar" class="nav-collapse">
-            <!-- sidebar menu start-->
-            <div class="leftside-navigation">
-                <ul class="sidebar-menu" id="nav-accordion">
-                    <li>
-                        <a class="active" href="{{URL::to('/dashboard')}}">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-list-alt"></i>
-                            <span>Danh mục sản phẩm</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="{{URL::to('/add-category-product')}}">Thêm danh mục sản phẩm</a></li>
-                            <li><a href="{{URL::to('/all-category-product')}}">Liệt kê danh mục sản phẩm</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-brand-alt"></i>
-                            <span>Thương hiệu sản phẩm</span>
-                        </a>
-                        <ul class="sub">
-                            <li><a href="{{URL::to('/add-brand-product')}}">Thêm thương hiệu sản phẩm</a></li>
-                            <li><a href="{{URL::to('/all-brand-product')}}">Liệt kê thương hiệu sản phẩm</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                </div>
             </div>
-            <!-- sidebar menu end-->
+        @yield('admin_content')
         </div>
-    </aside>
-    <!--sidebar end-->
-    <!--main content start-->
-    <section id="main-content">
-        <section class="wrapper">
-            @yield('admin_content')
-        </section>
-        <!-- footer -->
-        <div class="footer bottom-0">
-            <div class="wthree-copyright">
-                <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
-            </div>
-        </div>
-        <!-- / footer -->
-    </section>
-    <!--main content end-->
-</section>
-<script src="{{asset('public/backend/js/bootstrap.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-<script src="{{asset('public/backend/js/scripts.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.slimscroll.js')}}"></script>
-<script src="{{asset('public/backend/js/jquery.nicescroll.js')}}"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="{{asset('public/backend/js/flot-chart/excanvas.min.js')}}"></script><![endif]-->
-<script src="{{asset('public/backend/js/jquery.scrollTo.js')}}"></script>
-<!-- morris JavaScript -->
-<script>
-    $(document).ready(function() {
-        //BOX BUTTON SHOW AND CLOSE
-        jQuery('.small-graph-box').hover(function() {
-            jQuery(this).find('.box-button').fadeIn('fast');
-        }, function() {
-            jQuery(this).find('.box-button').fadeOut('fast');
-        });
-        jQuery('.small-graph-box .box-close').click(function() {
-            jQuery(this).closest('.small-graph-box').fadeOut(200);
-            return false;
-        });
+    </div>
+</div>
 
-        //CHARTS
-        function gd(year, day, month) {
-            return new Date(year, month - 1, day).getTime();
-        }
-
-        graphArea2 = Morris.Area({
-            element: 'hero-area',
-            padding: 10,
-            behaveLikeLine: true,
-            gridEnabled: false,
-            gridLineColor: '#dddddd',
-            axes: true,
-            resize: true,
-            smooth:true,
-            pointSize: 0,
-            lineWidth: 0,
-            fillOpacity:0.85,
-            data: [
-                {period: '2015 Q1', iphone: 2668, ipad: null, itouch: 2649},
-                {period: '2015 Q2', iphone: 15780, ipad: 13799, itouch: 12051},
-                {period: '2015 Q3', iphone: 12920, ipad: 10975, itouch: 9910},
-                {period: '2015 Q4', iphone: 8770, ipad: 6600, itouch: 6695},
-                {period: '2016 Q1', iphone: 10820, ipad: 10924, itouch: 12300},
-                {period: '2016 Q2', iphone: 9680, ipad: 9010, itouch: 7891},
-                {period: '2016 Q3', iphone: 4830, ipad: 3805, itouch: 1598},
-                {period: '2016 Q4', iphone: 15083, ipad: 8977, itouch: 5185},
-                {period: '2017 Q1', iphone: 10697, ipad: 4470, itouch: 2038},
-
-            ],
-            lineColors:['#eb6f6f','#926383','#eb6f6f'],
-            xkey: 'period',
-            redraw: true,
-            ykeys: ['iphone', 'ipad', 'itouch'],
-            labels: ['All Visitors', 'Returning Visitors', 'Unique Visitors'],
-            pointSize: 2,
-            hideHover: 'auto',
-            resize: true
-        });
-
-
-    });
-</script>
-<!-- calendar -->
-<script type="text/javascript" src="{{asset('public/backend/js/monthly.js')}}"></script>
-<script type="text/javascript">
-    $(window).load( function() {
-
-        $('#mycalendar').monthly({
-            mode: 'event',
-
-        });
-
-        $('#mycalendar2').monthly({
-            mode: 'picker',
-            target: '#mytarget',
-            setWidth: '250px',
-            startHidden: true,
-            showTrigger: '#mytarget',
-            stylePast: true,
-            disablePast: true
-        });
-
-        switch(window.location.protocol) {
-            case 'http:':
-            case 'https:':
-                // running on a server, should be good.
-                break;
-            case 'file:':
-                alert('Just a heads-up, events will not work when run locally.');
-        }
-
-    });
-</script>
-<!-- //calendar -->
+<script src="{{asset('public/backend/js/main.js')}}"></script>
 </body>
 </html>

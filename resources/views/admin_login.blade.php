@@ -24,7 +24,7 @@
             <form class="login100-form validate-form" action="{{URL::to('/admin-dashboard')}}" method="post">
                 {{ csrf_field() }}
 					<span class="login100-form-title p-b-33 font-weight-bold">
-						Đăng nhập hệ thống
+						Đăng nhập
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -45,15 +45,15 @@
                     </button>
                 </div>
 
-{{--                <div class="text-center p-t-45 p-b-4">--}}
-{{--						<span class="txt1">--}}
-{{--							Quên--}}
-{{--						</span>--}}
-
-{{--                    <a href="#" class="txt2 hov1">--}}
-{{--                        Tài khoản / Mật khẩu?--}}
-{{--                    </a>--}}
-{{--                </div>--}}
+                <div class="text-center p-t-45 p-b-4">
+                    <?php
+                    $message = Session::get('messages');
+                    if($message){
+                        echo '<i class="fa fa-times" style="color: red" ></i><span class="txt1" style="color: red">'.$message.'</span>';
+                        Session::put('messages',null);
+                    }
+                    ?>
+                </div>
 
 {{--                <div class="text-center">--}}
 {{--						<span class="txt1">--}}
@@ -68,8 +68,6 @@
         </div>
     </div>
 </div>
-
-
 
 <script src="{{asset('public/backend/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('public/backend/vendor/animsition/js/animsition.min.j')}}s"></script>

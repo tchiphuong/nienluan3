@@ -1,50 +1,50 @@
 @extends('admin_layout')
 @section('admin_content')
-    {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">--}}
-    {{--    <legend>TẤT CẢ thương hiệu</legend>--}}
-    {{--    <div class="container">--}}
-    {{--        <div class="table-responsive">--}}
-    {{--        <table class="table">--}}
-    {{--            <thead class="thead-dark">--}}
-    {{--            <a href="{{URL::to('/add-brand-product')}}" class="btn btn-primary btn-xs pull-right"><b>+</b> Thêm mới</a>--}}
-    {{--            <tr>--}}
-    {{--                <th scope="col">Tên thương hiệu</th>--}}
-    {{--                <th scope="col">Hiển thị / Ẩn</th>--}}
-    {{--                <th scope="col" class="text-center">Hành động</th>--}}
-    {{--            </tr>--}}
-    {{--            </thead>--}}
-    {{--            @foreach($all_brand_product as $key => $cate_pro)--}}
-    {{--            <tr>--}}
-    {{--                <td>--}}
-    {{--                    {{$cate_pro->brand_name}}--}}
-    {{--                </td>--}}
-    {{--                <td>--}}
-    {{--                    <span class="text-ellipsis">--}}
-    {{--                        @if($cate_pro->brand_status == 0)--}}
-    {{--                            <a href="{{URL::to('/show-brand-product/'.$cate_pro -> brand_id)}}">--}}
-    {{--                                <i class="fa fa-eye-slash" style="color: red"></i>--}}
-    {{--                                <span class="glyphicon glyphicon-edit"></span> Chỉnh sửa--}}
-    {{--                            </a>--}}
-    {{--                        @else--}}
-    {{--                            <a href="{{URL::to('/hide-brand-product/'.$cate_pro -> brand_id)}}">--}}
-    {{--                                <i class="fa fa-eye" style="color: black"></i>--}}
-    {{--                            </a>--}}
-    {{--                        @endif--}}
-    {{--                    </span>--}}
-    {{--                </td>--}}
-    {{--                <td class="text-center">--}}
-    {{--                    <a class='btn btn-info btn-xs' href="{{URL::to('/edit-brand-product/'.$cate_pro -> brand_id)}}" name="edit_brand_product">--}}
-    {{--                        <span class="glyphicon glyphicon-edit"></span> Chỉnh sửa--}}
-    {{--                    </a>--}}
-    {{--                    <a class="btn btn-danger btn-xs" href="{{URL::to('/delete-brand-product/'.$cate_pro -> brand_id)}}" name="dalete_brand_product">--}}
-    {{--                        <span class="glyphicon glyphicon-remove"></span> Xóa--}}
-    {{--                    </a>--}}
-    {{--                </td>--}}
-    {{--            </tr>--}}
-    {{--            @endforeach--}}
-    {{--        </table>--}}
-    {{--    </div>--}}
-    {{--    </div>--}}
+{{--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">--}}
+{{--        <legend>TẤT CẢ thương hiệu</legend>--}}
+{{--        <div class="container">--}}
+{{--            <div class="table-responsive">--}}
+{{--            <table class="table">--}}
+{{--                <thead class="thead-dark">--}}
+{{--                <a href="{{URL::to('/add-brand-product')}}" class="btn btn-primary btn-xs pull-right"><b>+</b> Thêm mới</a>--}}
+{{--                <tr>--}}
+{{--                    <th scope="col">Tên thương hiệu</th>--}}
+{{--                    <th scope="col">Hiển thị / Ẩn</th>--}}
+{{--                    <th scope="col" class="text-center">Hành động</th>--}}
+{{--                </tr>--}}
+{{--                </thead>--}}
+{{--                @foreach($all_brand_product as $key => $cate_pro)--}}
+{{--                <tr>--}}
+{{--                    <td>--}}
+{{--                        {{$cate_pro->brand_name}}--}}
+{{--                    </td>--}}
+{{--                    <td>--}}
+{{--                        <span class="text-ellipsis">--}}
+{{--                            @if($cate_pro->brand_status == 0)--}}
+{{--                                <a href="{{URL::to('/show-brand-product/'.$cate_pro -> brand_id)}}">--}}
+{{--                                    <i class="fa fa-eye-slash" style="color: red"></i>--}}
+{{--                                    <span class="glyphicon glyphicon-edit"></span> Chỉnh sửa--}}
+{{--                                </a>--}}
+{{--                            @else--}}
+{{--                                <a href="{{URL::to('/hide-brand-product/'.$cate_pro -> brand_id)}}">--}}
+{{--                                    <i class="fa fa-eye" style="color: black"></i>--}}
+{{--                                </a>--}}
+{{--                            @endif--}}
+{{--                        </span>--}}
+{{--                    </td>--}}
+{{--                    <td class="text-center">--}}
+{{--                        <a class='btn btn-info btn-xs' href="{{URL::to('/edit-brand-product/'.$cate_pro -> brand_id)}}" name="edit_brand_product">--}}
+{{--                            <span class="glyphicon glyphicon-edit"></span> Chỉnh sửa--}}
+{{--                        </a>--}}
+{{--                        <a class="btn btn-danger btn-xs" href="{{URL::to('/delete-brand-product/'.$cate_pro -> brand_id)}}" name="dalete_brand_product">--}}
+{{--                            <span class="glyphicon glyphicon-remove"></span> Xóa--}}
+{{--                        </a>--}}
+{{--                    </td>--}}
+{{--                </tr>--}}
+{{--                @endforeach--}}
+{{--            </table>--}}
+{{--        </div>--}}
+{{--        </div>--}}
 
     <div class="table-agile-info">
         <div class="panel panel-default">

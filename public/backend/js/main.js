@@ -1,57 +1,32 @@
+window.addEventListener("load", event => {
 
-(function ($) {
-    "use strict";
+    // Expand Left Side
+    var icon = document.querySelector('.left__icon'),
+        left = document.querySelector('.left');
 
+    icon.addEventListener('click', expand);
 
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
-
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
+    function expand() {
+        if (left.classList.contains('show')) {
+            left.classList.remove('show')
+        } else {
+            left.classList.add('show')
         }
+    }
 
-        return check;
+    var menuItem = document.querySelectorAll('.left__menuItem');
+
+    menuItem.forEach(function (el) {
+        el.addEventListener("click", openMenu);
     });
 
+    function openMenu(event) {
+        var currentmenuItem = event.currentTarget;
 
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
-        });
-    });
-
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
+        if (currentmenuItem.classList.contains('open')) {
+            currentmenuItem.classList.remove('open');
+        } else {
+            currentmenuItem.classList.add('open');
         }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
-    }
-
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).addClass('alert-validate');
-    }
-
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
-    }
-    
-    
-
-})(jQuery);
+    };
+})

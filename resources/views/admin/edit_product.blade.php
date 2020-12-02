@@ -2,9 +2,9 @@
 @section('admin_content')
     <div class="right">
         <div class="right__content">
-            <div class="right__title">Chèn sản phẩm</div>
+            <div class="right__title">Cập nhật sản phẩm</div>
             <div class="right__formWrapper">
-                <form action="{{URL::to('/save-product')}}" method="post" enctype="multipart/form-data">
+                <form action="{{URL::to('/update-product')}}" method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="right__inputWrapper">
                         <label for="title">Tiêu đề</label>
@@ -59,7 +59,7 @@
                         <label for="desc">Nội dung</label>
                         <textarea name="product_content" id="" cols="30" rows="10" placeholder="Mô tả"></textarea>
                     </div>
-                    <button class="btn" type="submit">Chèn</button>
+                    <button class="btn" name="" type="submit">Cập nhật</button>
                     <button class="btn" type="submit">Xem sản phẩm</button>
                 </form>
             </div>
