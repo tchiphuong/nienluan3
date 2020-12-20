@@ -40,43 +40,36 @@
                         <li class="left__menuItem">
                             <div class="left__title"><img src="{{asset('public/backend/assets/icon-tag.svg')}}" alt="">Sản Phẩm<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
                             <div class="left__text">
-                                <a class="left__link" href="{{URL::to('/add-product')}}">Chèn Sản Phẩm</a>
+                                <a class="left__link" href="{{URL::to('/add-product')}}">Thêm Sản Phẩm</a>
                                 <a class="left__link" href="{{URL::to('/all-product')}}">Xem Sản Phẩm</a>
                             </div>
                         </li>
                         <li class="left__menuItem">
                             <div class="left__title"><img src="{{asset('public/backend/assets/icon-edit.svg')}}" alt="">Danh Mục SP<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
                             <div class="left__text">
-                                <a class="left__link" href="{{URL::to('/add-category-product')}}">Chèn Danh Mục</a>
+                                <a class="left__link" href="{{URL::to('/add-category-product')}}">Thêm Danh Mục</a>
                                 <a class="left__link" href="{{URL::to('/all-category-product')}}">Xem Danh Mục</a>
                             </div>
                         </li>
                         <li class="left__menuItem">
                             <div class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Nhãn hiệu<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
                             <div class="left__text">
-                                <a class="left__link" href="{{URL::to('/add-brand-product')}}">Chèn Nhãn hiệu</a>
-                                <a class="left__link" href="{{URL::to('/all-brand-product')}}">Xem Nhãn hiệu</a>
-                            </div>
-                        </li>
-                        <li class="left__menuItem">
-                            <div class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Thể Loại<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
-                            <div class="left__text">
-                                <a class="left__link" href="insert_category.html">Chèn Thể Loại</a>
-                                <a class="left__link" href="view_category.html">Xem Thể Loại</a>
+                                <a class="left__link" href="{{URL::to('/add-brand-product')}}">Thêm Thương hiệu</a>
+                                <a class="left__link" href="{{URL::to('/all-brand-product')}}">Xem Thương hiệu</a>
                             </div>
                         </li>
                         <li class="left__menuItem">
                             <div class="left__title"><img src="{{asset('public/backend/assets/icon-settings.svg')}}" alt="">Slide<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
                             <div class="left__text">
-                                <a class="left__link" href="insert_slide.html">Chèn Slide</a>
+                                <a class="left__link" href="insert_slide.html">Thêm Slide</a>
                                 <a class="left__link" href="view_slides.html">Xem Slide</a>
                             </div>
                         </li>
                         <li class="left__menuItem">
                             <div class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Coupons<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
                             <div class="left__text">
-                                <a class="left__link" href="insert_coupon.html">Chèn Coupon</a>
-                                <a class="left__link" href="view_coupons.html">Xem Coupons</a>
+                                <a class="left__link" href="insert_coupon.html">Thêm Mã Giảm Giá</a>
+                                <a class="left__link" href="view_coupons.html">Xem Mã Giảm Giá</a>
                             </div>
                         </li>
                         <li class="left__menuItem">
@@ -86,12 +79,9 @@
                             <a href="view_orders.html" class="left__title"><img src="{{asset('public/backend/assets/icon-book.svg')}}" alt="">Đơn Đặt Hàng</a>
                         </li>
                         <li class="left__menuItem">
-                            <a href="edit_css.html" class="left__title"><img src="{{asset('public/backend/assets/icon-pencil.svg')}}" alt="">Chỉnh CSS</a>
-                        </li>
-                        <li class="left__menuItem">
                             <div class="left__title"><img src="{{asset('public/backend/assets/icon-user.svg')}}" alt="">Admin<img class="left__iconDown" src="{{asset('public/backend/assets/arrow-down.svg')}}" alt=""></div>
                             <div class="left__text">
-                                <a class="left__link" href="insert_admin.html">Chèn Admin</a>
+                                <a class="left__link" href="insert_admin.html">Thêm Admin</a>
                                 <a class="left__link" href="view_admins.html">Xem Admins</a>
                             </div>
                         </li>

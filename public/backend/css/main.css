@@ -1604,5 +1604,14 @@ input.input100 {
     }
 }
 
+.message{
+    color: #d9534f;
+    margin-top: 5px;
+}
+.message a{
+    color: #0275d8;
+}
 
-
+.product__image{
+    max-width: 120px;
+}

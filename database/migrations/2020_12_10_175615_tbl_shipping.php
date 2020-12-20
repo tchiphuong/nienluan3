@@ -14,7 +14,12 @@ class TblShipping extends Migration
     public function up()
     {
         Schema::create('tbl_shipping', function (Blueprint $table) {
-            $table->id();
+            $table->Increments('shipping_id');
+            $table->string('shipping_name');
+            $table->text('shipping_notes');
+            $table->string('shipping_address');
+            $table->string('shipping_phone');
+            $table->string('shipping_email');
             $table->timestamps();
         });
     }

@@ -30,11 +30,10 @@
 
 /* Template default CSS
 /*----------------------------------------*/
-
 html,
 body {
 	height: 100%;
-	font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -1589,6 +1588,29 @@ ol {
 	margin-right: 6px;
 }
 
+.pagination__option .active{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: #ca2727;
+    border: 1px solid #f2f2f2;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    -webkit-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    transition: all, 0.3s;
+    margin-right: 6px;
+}
+/*.pagination__option .active:hover {*/
+/*    background: #0d0d0d;*/
+/*    border-color: #0d0d0d;*/
+/*    color: #ffffff;*/
+/*}*/
+
 .pagination__option a:last-child {
 	margin-right: 0;
 }
@@ -2344,7 +2366,7 @@ ol {
 	height: 50px;
 	width: 100%;
 	border: 1px solid #e1e1e1;
-	border-radius: 2px;
+	border-radius: 20px;
 	margin-bottom: 25px;
 	font-size: 14px;
 	padding-left: 20px;
@@ -3679,4 +3701,47 @@ ol {
 		width: 100%;
 		font-size: 24px;
 	}
+}
+
+.product__item{
+    overflow: hidden;
+}
+
+@keyframes zoomIn {
+    from {background-size: 120%;}
+    to {background-size: 100%;}
+}
+.product__item__pic{
+    height: 262.5px;
+    background-position: center;
+    animation-name: zoomIn;
+    animation-duration: 1s;
+}
+@keyframes zoomOut {
+    from {background-size: 103%;}
+    to {background-size: 120%;}
+}
+
+.product__item__pic:hover {
+    background-position: center;
+    animation-name: zoomOut;
+    animation-duration:  0.5s;
+    background-size: 120%;
+}
+
+.product__button a{
+    padding: 0 10px 0 10px;
+    border-radius: 25px;
+    height: 45px;
+    line-height: 46px;
+    background: #ca1515;
+    float: right;
+    color: #ffffff;
+}
+.product__button a:hover{
+    background: #ca2727;
+}
+
+.message{
+    color: red;
 }

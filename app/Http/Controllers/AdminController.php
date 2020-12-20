@@ -26,7 +26,17 @@ class AdminController extends Controller
 
     public function show_dashboard(){
         $this->AuthLogin();
-        return view('admin.dashboard');
+        $product = DB::table('tbl_product')->count();
+        $category = DB::table('tbl_category_product')->count();
+        $customer = DB::table('tbl_customers')->count();
+        Session::put('quantity_product',$product);
+        Session::put('quantity_category',$category);
+        Session::put('quantity_customer',$customer);
+        return view('admin.dashboard')
+            ->with('admin.quantity_product',$product)
+            ->with('admin.quantity_category',$category)
+            ->with('admin.quantity_customer',$customer)
+            ;
     }
 
     public function dashboard(Request $request){

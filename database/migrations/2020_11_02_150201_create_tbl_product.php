@@ -22,6 +22,8 @@ class CreateTblProduct extends Migration
             $table->text('product_content');
             $table->string('product_price');
             $table->string('product_image');
+            $table->string('product_image2');
+            $table->string('product_image3');
             $table->string('product_size');
             $table->string('product_color');
             $table->integer('product_status');

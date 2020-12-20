@@ -6,8 +6,8 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="contact__content">
                         <div class="contact__form">
-                            <h5>ĐĂNG KÝ</h5>
-                            <form action="{{URL::to('/add-customer')}}" method="POST">
+                            <h5>Đăng ký thành viên</h5>
+                            <form action="{{URL::to('/add-customer')}}" method="POST" class="checkout__form">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-lg-8">
@@ -15,7 +15,7 @@
                                             <div class="col-lg-12 col-md-12 col-sm-12">
                                                 <div class="checkout__form__input">
                                                     <p>Họ tên<span>*</span></p>
-                                                    <input type="text" name="customer_name">
+                                                    <input type="text" name="customer_name" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -27,19 +27,26 @@
                                             <div class="col-lg-12 col-md-12 col-sm-12">
                                                 <div class="checkout__form__input">
                                                     <p>Email <span>*</span></p>
-                                                    <input type="text" name="customer_email">
+{{--                                                    <input type="email" name="customer_email">--}}
+                                                    <input type="email" name="customer_email">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
                                                 <div class="checkout__form__input">
                                                     <p>Mật khẩu <span>*</span></p>
-                                                    <input type="text" name="customer_password">
+                                                    <input type="password" name="customer_password">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12 col-sm-12">
                                                 <div class="checkout__form__input">
                                                     <p>Xác nhận mật khẩu <span>*</span></p>
-                                                    <input type="text" name="customer_password">
+                                                    <input type="password" name="customer_password">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="checkout__form__input">
+                                                    <p>Hình đại diện</p>
+                                                    <input type="file" name="customer_password">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12">

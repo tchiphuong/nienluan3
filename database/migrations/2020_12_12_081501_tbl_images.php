@@ -14,7 +14,12 @@ class TblImages extends Migration
     public function up()
     {
         Schema::create('tbl_images', function (Blueprint $table) {
-            $table->id();
+            $table->increments('images_id');
+            $table->integer('product_id')->nullable();
+            $table->integer('admin_id')->nullable();
+            $table->integer('customer_id')->nullable();
+            $table->string('images_name')->nullable();
+            $table->string('images_link');
             $table->timestamps();
         });
     }

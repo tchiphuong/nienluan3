@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 //frontend
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/trang-chu', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/gio-hang', [\App\Http\Controllers\HomeController::class, 'cart']);
+
+
+//Danh muc san pham trang chu
+Route::get('/danh-muc/{category_id}',[\App\Http\Controllers\CategoryProduct::class,'show_category_home']);
+Route::get('/thuong-hieu/{category_id}',[\App\Http\Controllers\BrandProduct::class,'show_brand_home']);
+Route::get('/san-pham/{product_id}',[\App\Http\Controllers\ProductController::class,'details_product']);
+Route::get('/san-pham',[\App\Http\Controllers\ProductController::class,'show_product_home']);
 
 //backend
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
@@ -52,3 +60,21 @@ Route::get('/hide-product/{product_id}', [\App\Http\Controllers\ProductControlle
 Route::post('/save-product', [\App\Http\Controllers\ProductController::class, 'save_product']);
 Route::post('/update-product/{product_id}', [\App\Http\Controllers\ProductController::class, 'update_product']);
 
+//cart
+Route::get('/save-cart/{id}', [\App\Http\Controllers\CartController::class, 'add_cart_home']);
+Route::POST('/save-cart', [\App\Http\Controllers\CartController::class, 'save_cart']);
+Route::POST('/update-cart-quantity', [\App\Http\Controllers\CartController::class, 'update_cart_quantity']);
+Route::get('/show-cart', [\App\Http\Controllers\CartController::class, 'show_cart']);
+Route::get('/delete-to-cart/{rowId}', [\App\Http\Controllers\CartController::class, 'delete_to_cart']);
+Route::get('/update-to-cart/{qty}/{rowId}', [\App\Http\Controllers\CartController::class, 'update_to_cart']);
+
+
+//checkout
+Route::get('/dang-nhap', [\App\Http\Controllers\CheckoutController::class, 'login_checkout']);
+Route::get('/logout-checkout', [\App\Http\Controllers\CheckoutController::class, 'logout_checkout']);
+Route::get('/dang-ky', [\App\Http\Controllers\CheckoutController::class, 'sign_up']);
+Route::post('/add-customer', [\App\Http\Controllers\CheckoutController::class, 'add_customer']);
+Route::post('/login-customer', [\App\Http\Controllers\CheckoutController::class, 'login_customer']);
+Route::post('/save-checkout-customer', [\App\Http\Controllers\CheckoutController::class, 'save_checkout_customer']);
+Route::get('/checkout', [\App\Http\Controllers\CheckoutController::class, 'checkout']);
+Route::get('/payment', [\App\Http\Controllers\CheckoutController::class, 'payment']);
