@@ -45,7 +45,7 @@
                             @foreach($content as $v_content)
                             <tr>
                                 <td class="cart__product__item">
-                                    <img class="img-thumbnail" src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" alt="" width="100px">
+                                    <img class="img-thumbnail" style="width: 100px;height: 100px; border-radius: 100%; object-fit: cover;" src="{{URL::to('public/uploads/product/'.$v_content->options->image)}}" alt="">
                                     <div class="cart__product__item__title">
                                         <h6><a href="san-pham/{{$v_content->id}}" style="color: #0b0b0b;">{{$v_content->name}}</a>
                                             <input type="hidden" value="{{$v_content->rowId}}" name="rowId_cart"></h6>
@@ -89,10 +89,7 @@
                                             $up = $v_content->qty + 1;
                                             $down = $v_content->qty - 1;
                                         ?>
-{{--                                        <a href="{{URL::to('/update-to-cart/'.$down.'/'.$v_content->rowId)}}"><span class="dec qtybtn">-</span></a>--}}
-{{--                                            <a href="{{URL::to('/update-to-cart/'.$v_content->qty.'/'.$v_content->rowId)}}">--}}
                                                 <input type="number" value="{{$v_content->qty}}" name="cart_quantity">
-{{--                                        <a href="{{URL::to('/update-to-cart/'.$up.'/'.$v_content->rowId)}}"><span class="dec qtybtn">+</span></a>--}}
                                     </div>
                                 </td>
                                 <td class="cart__total">
@@ -131,11 +128,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="discount__content">
-                        <h6>Mã giảm giá</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Nhập mã giảm giá">
-                            <button type="submit" class="site-btn">Áp dụng</button>
-                        </form>
+{{--                        <h6>Mã giảm giá</h6>--}}
+{{--                        <form action="#">--}}
+{{--                            <input type="text" placeholder="Nhập mã giảm giá">--}}
+{{--                            <button type="submit" class="site-btn">Áp dụng</button>--}}
+{{--                        </form>--}}
                     </div>
                 </div>
                 <div class="col-lg-4 offset-lg-2">
@@ -144,8 +141,8 @@
                         <ul>
                             <li>Tổng tiền hàng <span>{{substr(Cart::priceTotal(), 0, -3)}} đ</span></li>
                             <li>Phí vận chuyển <span>0 đ</span></li>
-                            <li>Đã giảm giá<span>- {{substr(Cart::discount(), 0, -3)}} đ</span></li>
-                            <li>Thuế <span>{{substr(Cart::tax(), 0, -3)}} đ</span></li>
+{{--                            <li>Đã giảm giá<span>- {{substr(Cart::discount(), 0, -3)}} đ</span></li>--}}
+{{--                            <li>Thuế <span>{{substr(Cart::tax(), 0, -3)}} đ</span></li>--}}
                             <li>Tổng thanh toán <span>{{substr(Cart::total(), 0, -3)}} đ</span></li>
                         </ul>
 
@@ -153,12 +150,12 @@
                         $customer_id = Session::get('customer_id');
                         if($customer_id!=NULL){
                         ?>
-                        <a class="primary-btn" href="{{URL::to('/checkout')}}">Thanh toán</a>
+                        <a class="primary-btn" href="{{URL::to('/checkout')}}">Mua hàng</a>
                         <?php
                         }else{
                         ?>
 
-                        <a class="primary-btn" href="{{URL::to('/dang-nhap')}}">Thanh toán</a>
+                        <a class="primary-btn" href="{{URL::to('/dang-nhap')}}">Mua hàng</a>
                         <?php
                         }
                         ?>

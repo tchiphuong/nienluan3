@@ -28,8 +28,8 @@ class ProductController extends Controller
         $this->AuthLogin();
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand_product')->orderby('brand_id','desc')->get();
-        return view('admin.add_product')->with('cate_product',$cate_product)->with('brand_product',$brand_product);
-        return view('admin.add_product');
+        return view('admin.product.add_product')->with('cate_product',$cate_product)->with('brand_product',$brand_product);
+        return view('admin.product.add_product');
     }
 
     public function all_product()
@@ -39,12 +39,13 @@ class ProductController extends Controller
 //            ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
 //            ->join('tbl_brand_product','tbl_brand_product.brand_id','=','tbl_product.brand_id')
             ->orderby('tbl_product.product_id','desc')->get();
+        $all_product = product::orderby('product_id','desc')->paginate(6);
         $date = DB::table('tbl_product')->get();
         foreach ($date as $key => $value){
             $date_update = $value->updated_at;
         }
-        $manager_product  = view('admin.all_product')->with('all_product',$all_product);
-        return view('admin_layout')->with('admin.all_product', $manager_product);
+        $manager_product  = view('admin.product.all_product')->with('all_product',$all_product);
+        return view('admin_layout')->with('admin.product.all_product', $manager_product);
 //        dd($all_product);
 //        echo $date_update;
     }
@@ -96,10 +97,12 @@ class ProductController extends Controller
             Session::put('message','Sản phẩm đã được thêm');
             return Redirect::to('/add-product');
         }
-        $data['product_image'] = '';
+        $data['product_image'] = 'no-image.jpg';
+        $data['product_image2'] = 'no-image.jpg';
+        $data['product_image3'] = 'no-image.jpg';
         DB::table('tbl_product')->insert($data);
         Session::put('message','Sản phẩm đã được thêm');
-//        return Redirect::to('/add-product');
+        return Redirect::to('/add-product');
 
     }
 
@@ -131,9 +134,9 @@ class ProductController extends Controller
 
         $edit_product = DB::table('tbl_product')->where('product_id',$product_id)->get();
 
-        $manager_product  = view('admin.edit_product')->with('edit_product',$edit_product)->with('cate_product',$cate_product)->with('brand_product',$brand_product);
+        $manager_product  = view('admin.product.edit_product')->with('edit_product',$edit_product)->with('cate_product',$cate_product)->with('brand_product',$brand_product);
 
-        return view('admin_layout')->with('admin.edit_product', $manager_product);
+        return view('admin_layout')->with('admin.product.edit_product', $manager_product);
     }
 
     public function delete_product($product_id)
@@ -183,6 +186,8 @@ class ProductController extends Controller
             return Redirect::to('all-product');
         }
 
+
+
 //        echo $new_image."<br>";
 //        echo $new_image2."<br>";
 //        echo $new_image3."<br>";
@@ -215,7 +220,7 @@ class ProductController extends Controller
         $related_product = DB::table('tbl_product')
             ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
             ->join('tbl_brand_product','tbl_brand_product.brand_id','=','tbl_product.brand_id')
-            ->where('tbl_category_product.category_id',$category_id)->wherenotin('tbl_product.product_id',[$product_id])->get();
+            ->where('tbl_category_product.category_id',$category_id)->wherenotin('tbl_product.product_id',[$product_id])->limit(4)->inRandomOrder()->get();
 
         return view('pages.product.show_details')
             ->with('category',$cate_product)
@@ -227,11 +232,6 @@ class ProductController extends Controller
     public function show_product_home(){
         $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_name','asc')->get();
         $brand_product = DB::table('tbl_brand_product')->where('brand_status','1')->orderby('brand_name','asc')->get();
-
-//        $all_product = DB::table('tbl_product')->where('product_status','1')->orderby('product_id','desc')->get()->paginate(6);;
-
-//        $all_product= product::all()->where('product_status','1')->sortDesc();
-//        $all_product= product::all()->where('product_status','1')->last();
         $all_product = product::where('product_status', 1)->orderby('product_id','desc')->paginate(6);
         $now = Carbon::now();
         return view('pages.product.show_product')

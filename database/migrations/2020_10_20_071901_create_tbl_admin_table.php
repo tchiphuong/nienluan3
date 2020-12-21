@@ -19,6 +19,7 @@ class CreateTblAdminTable extends Migration
             $table->string('admin_password',50);
             $table->string('admin_name',100);
             $table->string('admin_phone',10);
+            $table->string('admin_image');
             $table->timestamps();
         });
     }

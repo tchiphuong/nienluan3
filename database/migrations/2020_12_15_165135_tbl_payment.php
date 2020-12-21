@@ -14,7 +14,9 @@ class TblPayment extends Migration
     public function up()
     {
         Schema::create('tbl_payment', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('payment_id');
+            $table->string('payment_method');
+            $table->integer('payment_status');
             $table->timestamps();
         });
     }

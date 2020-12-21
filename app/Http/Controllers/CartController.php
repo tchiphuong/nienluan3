@@ -31,6 +31,8 @@ class CartController extends Controller
         $discount = rand(0,100);
         Session::put('giamgia',$discount);
         Cart::add($data);
+//        DB::table('tbl_cart')->insert($data);
+//        dd($data);
         return Redirect::to('/show-cart');
     }
 
@@ -51,12 +53,13 @@ class CartController extends Controller
 //        print_r($details_product);
 //        echo "</pre>";
         Cart::setGlobalTax(0);
-        $discount = rand(0,100);
+//        $discount = rand(0,100);
+        $discount = 0;
         Session::put('giamgia',$discount);
         Cart::setGlobalDiscount($discount);
         $total_price = $product_price - $product_price * $product_discount /100;
         Cart::add(['id' => $product_id, 'name' => $product_name, 'qty' => 1, 'price' => $total_price, 'weight' => $product_price, 'options' => ['image' => $product_image]]);
-        return Redirect::to('/show-cart');
+        return Redirect::to('/san-pham');
     }
     public function show_cart()
     {

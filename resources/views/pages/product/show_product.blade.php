@@ -44,20 +44,20 @@
                 <div class="col-lg-9 col-md-9">
                     <div class="row">
                         @foreach($product as $key => $pro)
-                            <div class="col-md-4 col-sm-6">
+                            <div class="col-md-4 col-sm-6" id="">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg img-fluid" data-setbg="{{asset('public/uploads/product/'.$pro->product_image)}}">
-                                        @if($pro->product_discount>0)
+                                        @if(floor(abs(strtotime(date_format(date_create($pro->created_at),"d/m/Y")) - strtotime(date_format(date_create($now),"d/m/Y"))) / (60*60*24))<10)
+                                            <div class="label new">
+                                                Mới
+                                            </div>
+                                        @elseif($pro->product_discount>0)
                                             <div class="label sale">
                                                 - {{$pro->product_discount}} %
                                             </div>
                                         @elseif($pro->product_quantity==0)
                                             <div class="label stockout">
                                                 Hết hàng
-                                            </div>
-                                        @elseif(floor(abs(strtotime(date_format(date_create($pro->updated_at),"d/m/Y")) - strtotime(date_format(date_create($now),"d/m/Y"))) / (60*60*24))<10)
-                                            <div class="label new">
-                                                Mới
                                             </div>
                                         @endif
                                         <ul class="product__hover">
@@ -108,37 +108,37 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="col-lg-12 text-center">
-                            <div class="pagination__option">
-                                <?php
-                                $next = $product->currentPage() + 1;
-                                $prev = $product->currentPage() - 1;
-                                if ($product->currentPage()>1)
+                            <div class="col-lg-12 text-center">
+                                <div class="pagination__option">
+                                    <?php
+                                    $next = $product->currentPage() + 1;
+                                    $prev = $product->currentPage() - 1;
+                                    if ($product->currentPage()>1)
                                     {
-                                        echo '<a href="san-pham?page=1"><i class="fa fa-angle-double-left"></i></a>'."\n";;
+                                        echo '<a href="san-pham?page=1"><i class="fa fa-angle-double-left"></i></a>'."\n";
                                         echo "<a ".'href="'."san-pham?page=";
-                                        echo $prev.'"><i class="fa fa-angle-left"></i></a>'."\n";;
+                                        echo $prev.'"><i class="fa fa-angle-left"></i></a>'."\n";
                                     }
-                                for ($i = 1; $i <= $product->lastPage(); $i++) {
+                                    for ($i = 1; $i <= $product->lastPage(); $i++) {
 
-                                    if ($i==$product->currentPage()){
-                                        echo '<span class="active">'.$i.'</span>'."\n";
+                                        if ($i==$product->currentPage()){
+                                            echo '<span class="active">'.$i.'</span>'."\n";
+                                        }
+                                        else{
+                                            echo "<a ".'href="'."san-pham?page=".$i.'">';
+                                            echo '<span>'.$i.'</span>';
+                                            echo "</a>"."\n";
+                                        }
                                     }
-                                    else{
-                                        echo "<a ".'href="'."san-pham?page=".$i.'">';
-                                        echo '<span>'.$i.'</span>';
-                                        echo "</a>"."\n";
+                                    if ($product->currentPage()!=$product->lastPage()){
+                                        echo "<a ".'href="'."san-pham?page=";
+                                        echo $next.'"><i class="fa fa-angle-right"></i></a>'."\n";;
+                                        echo "<a ".'href="'."san-pham?page=";
+                                        echo $product->lastPage().'"><i class="fa fa-angle-double-right"></i></a>'."\n";;
                                     }
-                                }
-                                if ($product->currentPage()!=$product->lastPage()){
-                                    echo "<a ".'href="'."san-pham?page=";
-                                    echo $next.'"><i class="fa fa-angle-right"></i></a>'."\n";;
-                                    echo "<a ".'href="'."san-pham?page=";
-                                    echo $product->lastPage().'"><i class="fa fa-angle-double-right"></i></a>'."\n";;
-                                }
-                                ?>
+                                    ?>
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -1615,3 +1615,29 @@ input.input100 {
 .product__image{
     max-width: 120px;
 }
+
+.excel{
+    background-color: #097e51 !important;
+    margin-bottom: 10px;
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0px 5px 10px rgba(116, 116, 156, 0.35);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.pdf{
+    background-color: #d9534f !important;
+    margin-bottom: 10px;
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0px 5px 10px rgba(116, 116, 156, 0.35);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}

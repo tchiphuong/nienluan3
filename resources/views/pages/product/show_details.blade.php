@@ -24,20 +24,20 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__left product__thumb nice-scroll">
                             <a class="pt active" href="#product-1">
-                                <img src="{{URL::to('/public/uploads/product/'.$value->product_image)}}" alt="" />
+                                <img src="{{URL::to('/public/uploads/product/'.$value->product_image)}}" style="width: 125px;height: 170px; object-fit: cover; " alt=""/>
                             </a>
                             <a class="pt" href="#product-2">
-                                <img src="{{URL::to('/public/uploads/product/'.$value->product_image2)}}" alt="" />
+                                <img src="{{URL::to('/public/uploads/product/'.$value->product_image2)}}" style="width: 125px;height: 170px; object-fit: cover; " alt=""/>
                             </a>
                             <a class="pt" href="#product-3">
-                                <img src="{{URL::to('/public/uploads/product/'.$value->product_image3)}}" alt="" />
+                                <img src="{{URL::to('/public/uploads/product/'.$value->product_image3)}}" style="width: 125px;height: 170px; object-fit: cover; " alt=""/>
                             </a>
                         </div>
                         <div class="product__details__slider__content">
                             <div class="product__details__pic__slider owl-carousel">
-                                <img data-hash="product-1" class="product__big__img" src="{{URL::to('/public/uploads/product/'.$value->product_image)}}" alt="">
-                                <img data-hash="product-2" class="product__big__img" src="{{URL::to('/public/uploads/product/'.$value->product_image2)}}" alt="">
-                                <img data-hash="product-3" class="product__big__img" src="{{URL::to('/public/uploads/product/'.$value->product_image3)}}" alt="">
+                                <img data-hash="product-1" class="product__big__img" src="{{URL::to('/public/uploads/product/'.$value->product_image)}}" style="width: 415px;height: 550px; border-radius: 1px; object-fit: cover; " alt="">
+                                <img data-hash="product-2" class="product__big__img" src="{{URL::to('/public/uploads/product/'.$value->product_image2)}}" style="width: 415px;height: 550px; border-radius: 1px; object-fit: cover; " alt="">
+                                <img data-hash="product-3" class="product__big__img" src="{{URL::to('/public/uploads/product/'.$value->product_image3)}}" style="width: 415px;height: 550px; border-radius: 1px; object-fit: cover; " alt="">
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6><a href="#">{{$relate->product_name}}</a></h6>
+                            <h6><a href="{{$relate->product_id}}">{{$relate->product_name}}</a></h6>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -220,6 +220,55 @@
                 </div>
                 @endforeach
             </div>
+{{--            <div class="blog__details__comment">--}}
+{{--                <h5>3 Comment</h5>--}}
+{{--                <a href="#" class="leave-btn">Leave a comment</a>--}}
+{{--                <div class="blog__comment__item">--}}
+{{--                    <div class="blog__comment__item__pic">--}}
+{{--                        <img src="img/blog/details/comment-1.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="blog__comment__item__text">--}}
+{{--                        <h6>Brandon Kelley</h6>--}}
+{{--                        <p>Duis voluptatum. Id vis consequat consetetur dissentiet, ceteros commune perpetua--}}
+{{--                            mei et. Simul viderer facilisis egimus tractatos splendi.</p>--}}
+{{--                        <ul>--}}
+{{--                            <li><i class="fa fa-clock-o"></i> Seb 17, 2019</li>--}}
+{{--                            <li><i class="fa fa-heart-o"></i> 12</li>--}}
+{{--                            <li><i class="fa fa-share"></i> 1</li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="blog__comment__item blog__comment__item--reply">--}}
+{{--                    <div class="blog__comment__item__pic">--}}
+{{--                        <img src="img/blog/details/comment-2.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="blog__comment__item__text">--}}
+{{--                        <h6>Brandon Kelley</h6>--}}
+{{--                        <p>Consequat consetetur dissentiet, ceteros commune perpetua mei et. Simul viderer--}}
+{{--                            facilisis egimus ulla mcorper.</p>--}}
+{{--                        <ul>--}}
+{{--                            <li><i class="fa fa-clock-o"></i> Seb 17, 2019</li>--}}
+{{--                            <li><i class="fa fa-heart-o"></i> 12</li>--}}
+{{--                            <li><i class="fa fa-share"></i> 1</li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="blog__comment__item">--}}
+{{--                    <div class="blog__comment__item__pic">--}}
+{{--                        <img src="img/blog/details/comment-3.jpg" alt="">--}}
+{{--                    </div>--}}
+{{--                    <div class="blog__comment__item__text">--}}
+{{--                        <h6>Brandon Kelley</h6>--}}
+{{--                        <p>Duis voluptatum. Id vis consequat consetetur dissentiet, ceteros commune perpetua--}}
+{{--                            mei et. Simul viderer facilisis egimus tractatos splendi.</p>--}}
+{{--                        <ul>--}}
+{{--                            <li><i class="fa fa-clock-o"></i> Seb 17, 2019</li>--}}
+{{--                            <li><i class="fa fa-heart-o"></i> 12</li>--}}
+{{--                            <li><i class="fa fa-share"></i> 1</li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </section>
     <!-- Product Details Section End -->

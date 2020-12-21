@@ -33,11 +33,35 @@
                                     @foreach($category as $key => $cate)
                                     <div class="card">
                                         <div class="card-text">
-                                            <a class="text-dark" href="{{ URL::to('/danh-muc/'.$cate->category_id)}}">{{$cate->category_name}}</a>
+                                            <b>
+                                                @if($cate->category_id==$name->category_id)
+                                                    <a class="text-danger" href="{{ URL::to('/danh-muc/'.$cate->category_id)}}"><i class="fa fa-angle-right"></i> {{$cate->category_name}}</a>
+                                                @else
+                                                    <a class="text-dark" href="{{ URL::to('/danh-muc/'.$cate->category_id)}}"><i class="fa fa-angle-right"></i> {{$cate->category_name}}</a>
+                                                @endif
+                                            </b>
                                         </div>
                                     </div>
                                     @endforeach
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar__categories">
+                        <div class="section-title">
+                            <a href="#"><h4>Thương hiệu</h4></a>
+                        </div>
+                        <div class="categories__accordion">
+                            <div class="accordion" id="accordionExample">
+                                @foreach($brand as $key => $value)
+                                    <div class="card">
+                                        <div class="card-text">
+                                            <b>
+                                                <a class="text-dark" href="{{ URL::to('/thuong-hieu/'.$value->brand_id)}}"><i class="fa fa-angle-right"></i> {{$value->brand_name}}</a>
+                                            </b>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -92,14 +116,29 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="col-lg-12 text-center">
-                            <div class="pagination__option">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#"><i class="fa fa-angle-right"></i></a>
+                            <div class="col-lg-12 text-center">
+                                <div class="pagination__option">
+                                    <?php
+                                    $next = $category_by_id->currentPage() + 1;
+                                    $prev = $category_by_id->currentPage() - 1;
+                                    ?>
+                                        @if ($category_by_id->currentPage()>1)
+                                            <a href="{{$name->category_id}}?page=1"><i class="fa fa-angle-double-left"></i></a>
+                                            <a href="{{$name->category_id}}?page={{$prev}}"><i class="fa fa-angle-left"></i></a>
+                                        @endif
+                                        @for ($i = 1; $i <= $category_by_id->lastPage(); $i++)
+                                            @if ($i==$category_by_id->currentPage())
+                                                <span class="active">{{$i}}</span>
+                                            @else
+                                                <a href="{{$name->category_id}}?page={{$i}}"><span>{{$i}}</span></a>
+                                            @endif
+                                        @endfor
+                                        @if ($category_by_id->currentPage()!=$category_by_id->lastPage())
+                                            <a href="{{$name->category_id}}?page={{$next}}"><i class="fa fa-angle-right"></i></a>
+                                            <a href="{{$name->category_id}}?page={{$category_by_id->lastPage()}}"><i class="fa fa-angle-double-right"></i></a>
+                                        @endif
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

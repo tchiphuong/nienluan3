@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/trang-chu', [\App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/gio-hang', [\App\Http\Controllers\HomeController::class, 'cart']);
+Route::POST('/tim-kiem', [\App\Http\Controllers\HomeController::class, 'search']);
 
 
 //Danh muc san pham trang chu
 Route::get('/danh-muc/{category_id}',[\App\Http\Controllers\CategoryProduct::class,'show_category_home']);
-Route::get('/thuong-hieu/{category_id}',[\App\Http\Controllers\BrandProduct::class,'show_brand_home']);
+Route::get('/thuong-hieu/{brand_id}',[\App\Http\Controllers\BrandProduct::class,'show_brand_home']);
 Route::get('/san-pham/{product_id}',[\App\Http\Controllers\ProductController::class,'details_product']);
 Route::get('/san-pham',[\App\Http\Controllers\ProductController::class,'show_product_home']);
 
@@ -28,6 +29,15 @@ Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
 Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'show_dashboard']);
 Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
 Route::post('/admin-dashboard',[\App\Http\Controllers\AdminController::class,'dashboard']);
+
+
+//admin
+Route::get('/insert-admin', [\App\Http\Controllers\AdminController::class, 'add_admin']);
+Route::get('/view-admin', [\App\Http\Controllers\AdminController::class, 'all_admin']);
+Route::get('/edit-admin/{admin_id}', [\App\Http\Controllers\AdminController::class, 'edit_admin']);
+Route::get('/delete-admin/{admin_id}', [\App\Http\Controllers\AdminController::class, 'delete_admin']);
+Route::post('/save-admin', [\App\Http\Controllers\AdminController::class, 'save_admin']);
+Route::post('/update-admin/{admin_id}', [\App\Http\Controllers\AdminController::class, 'update_admin']);
 
 //category-product
 Route::get('/add-category-product', [\App\Http\Controllers\CategoryProduct::class,'add_category_product']);
@@ -78,3 +88,27 @@ Route::post('/login-customer', [\App\Http\Controllers\CheckoutController::class,
 Route::post('/save-checkout-customer', [\App\Http\Controllers\CheckoutController::class, 'save_checkout_customer']);
 Route::get('/checkout', [\App\Http\Controllers\CheckoutController::class, 'checkout']);
 Route::get('/payment', [\App\Http\Controllers\CheckoutController::class, 'payment']);
+Route::get('/order-place', [\App\Http\Controllers\CheckoutController::class, 'order_place']);
+
+//order
+Route::get('/view-order', [\App\Http\Controllers\CheckoutController::class, 'manage_order']);
+Route::get('/edit-order/{id}', [\App\Http\Controllers\CheckoutController::class, 'approval_order']);
+Route::get('/shipping-order/{id}', [\App\Http\Controllers\CheckoutController::class, 'shipping_order']);
+Route::get('/delete-order/{id}', [\App\Http\Controllers\CheckoutController::class, 'delete_order']);
+Route::get('/view-order-checked', [\App\Http\Controllers\CheckoutController::class, 'manage_order_checked']);
+Route::get('/view-order-details/{id}', [\App\Http\Controllers\CheckoutController::class, 'view_order_details']);
+
+
+
+//customer
+Route::get('/view-customer', [\App\Http\Controllers\CustomerController::class, 'all_customer']);
+
+
+//excel
+Route::get('export-product',  [\App\Http\Controllers\ExportController::class, 'print_excel']);
+//endexxcel
+
+//pdf
+Route::get('export-pdf',  [\App\Http\Controllers\ExportController::class, 'print_pdf']);
+Route::get('export-order{id}',  [\App\Http\Controllers\ExportController::class, 'print_order']);
+//endpdf

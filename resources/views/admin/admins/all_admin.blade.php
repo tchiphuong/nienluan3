@@ -29,8 +29,8 @@
                                 <td data-label="Email">{{$admin->admin_email}}</td>
                                 <td data-label="Số điện thoại">{{$admin->admin_phone}}</td>
                                 <td data-label="Hình ảnh" style="text-align: center;"><img style="width: 50px;height: 50px; border-radius: 100%; object-fit: cover;" src="public/uploads/product/{{$admin->admin_image}}" alt=""></td>
-                                <td data-label="Sửa" class="right__iconTable"><a href="{{URL::to('/edit-product/'.$admin -> admin_id)}}"><i class="fa fa-edit"></i></a></td>
-                                <td data-label="Xoá" class="right__iconTable"><a href="{{URL::to('/delete-product/'.$admin -> admin_id)}}"><i class="fa fa-trash"></i></a></td>
+                                <td data-label="Sửa" class="right__iconTable"><a href="{{URL::to('/edit-admin/'.$admin -> admin_id)}}"><i class="fa fa-edit"></i></a></td>
+                                <td data-label="Xoá" class="right__iconTable"><a href="{{URL::to('/delete-admin/'.$admin -> admin_id)}}" onclick="return confirm('Are you sure to delete?')"><i class="fa fa-trash"></i></a></td>
                             </tr>
                         @endforeach
                         </tbody>

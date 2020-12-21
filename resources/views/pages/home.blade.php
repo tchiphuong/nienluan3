@@ -57,10 +57,10 @@
             </div>
             <div class="col-lg-8 col-md-8">
                 <ul class="filter__controls">
-                    <li class="active" data-filter="*">Tất cả</li>
-                    <li data-filter=".women">Nữ</li>
-                    <li data-filter=".men">Nam</li>
-                    <li data-filter=".kid">Trẻ em</li>
+{{--                    <li class="active" data-filter="*">Tất cả</li>--}}
+{{--                    <li data-filter=".women">Nữ</li>--}}
+{{--                    <li data-filter=".men">Nam</li>--}}
+{{--                    <li data-filter=".kid">Trẻ em</li>--}}
                 </ul>
             </div>
         </div>
@@ -70,17 +70,17 @@
             <div class="col-lg-3 col-md-4 col-sm-6 mix women">
                 <div class="product__item">
                     <div class="product__item__pic set-bg img-fluid" data-setbg="public/uploads/product/{{$pro->product_image}}">
-                        @if($pro->product_discount>0)
-                            <div class="label sale">
-                                Giảm giá
-                            </div>
-                        @elseif($pro->product_quantity==0)
-                            <div class="label stockout">
-                                Hết hàng
-                            </div>
-                        @elseif(floor(abs(strtotime(date_format(date_create($pro->updated_at),"d/m/Y")) - strtotime(date_format(date_create($now),"d/m/Y"))) / (60*60*24))<10)
+                        @if(floor(abs(strtotime(date_format(date_create($pro->updated_at),"d/m/Y")) - strtotime(date_format(date_create($now),"d/m/Y"))) / (60*60*24))<10)
                             <div class="label new">
                                 Mới
+                            </div>
+                        @elseif($pro->product_discount>0)
+                            <div class="label sale">
+                                - {{$pro->product_discount}} %
+                            </div>
+                            @elseif($pro->product_quantity==0)
+                            <div class="label stockout">
+                                Hết hàng
                             </div>
                         @endif
                         <ul class="product__hover">
@@ -131,7 +131,7 @@
             </div>
             @endforeach
                 <div class="col-lg-12 text-center">
-                    <a class="btn btn-lg btn-danger" href="{{ URL::to('/san-pham')}}" role="button" ><h6 class="text-white">Xem tất cả sản phẩm</h6></a>
+                    <a href="{{ URL::to('/san-pham')}}" class="primary-btn load-btn">Xem tất cả sản phẩm</a>
                 </div>
         </div>
     </div>

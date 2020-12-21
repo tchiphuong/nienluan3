@@ -38,26 +38,34 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="right__inputWrapper">
-                        <label for="image">Hình ảnh 1</label>
-                        <input type="file" name="image_link_1">
-                    </div>
-                    <div class="right__inputWrapper">
-                        <img class="product__image" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" alt="">
-                    </div>
-                    <div class="right__inputWrapper">
-                        <label for="image">Hình ảnh 2</label>
-                        <input type="file" name="image_link_2">
-                    </div>
-                    <div class="right__inputWrapper">
-                        <img class="product__image" src="{{URL::to('public/uploads/product/'.$pro->product_image2)}}" alt="">
-                    </div>
-                    <div class="right__inputWrapper">
-                        <label for="image">Hình ảnh 3</label>
-                        <input type="file" name="image_link_3">
-                    </div>
-                    <div class="right__inputWrapper">
-                        <img class="product__image" src="{{URL::to('public/uploads/product/'.$pro->product_image3)}}" alt="">
+                    <div class="row">
+                        <div class="col l-4 m-12 c-12">
+                            <div class="right__inputWrapper">
+                                <label for="image">Hình ảnh 1</label>
+                                <input type="file" name="image_link_1" value="{{$pro->product_image}}">
+                            </div>
+                            <div class="right__inputWrapper">
+                                <img class="edit__product l-12 m-12 c-12" src="{{URL::to('public/uploads/product/'.$pro->product_image)}}" alt="{{$pro->product_name}}">
+                            </div>
+                        </div>
+                        <div class="col l-4 m-12 c-12">
+                            <div class="right__inputWrapper">
+                                <label for="image">Hình ảnh 2</label>
+                                <input type="file" name="image_link_2" value="{{$pro->product_image2}}">
+                            </div>
+                            <div class="right__inputWrapper">
+                                <img class="edit__product l-12 m-12 c-12" src="{{URL::to('public/uploads/product/'.$pro->product_image2)}}" alt="{{$pro->product_name}}">
+                            </div>
+                        </div>
+                        <div class="col l-4 m-12 c-12">
+                            <div class="right__inputWrapper">
+                                <label for="image">Hình ảnh 3</label>
+                                <input type="file" name="image_link_3" value="{{$pro->product_image3}}">
+                            </div>
+                            <div class="right__inputWrapper">
+                                <img class="edit__product l-12 m-12 c-12" src="{{URL::to('public/uploads/product/'.$pro->product_image3)}}" alt="{{$pro->product_name}}">
+                            </div>
+                        </div>
                     </div>
                     <div class="right__inputWrapper">
                         <label for="title">Giá sản phẩm</label>
