@@ -112,3 +112,7 @@ Route::get('export-product',  [\App\Http\Controllers\ExportController::class, 'p
 Route::get('export-pdf',  [\App\Http\Controllers\ExportController::class, 'print_pdf']);
 Route::get('export-order{id}',  [\App\Http\Controllers\ExportController::class, 'print_order']);
 //endpdf
+
+
+//addproduct random
+Route::get('/random-product', [\App\Http\Controllers\ProductController::class, 'pro_random']);

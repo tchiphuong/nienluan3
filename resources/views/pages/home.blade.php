@@ -84,7 +84,9 @@
                             </div>
                         @endif
                         <ul class="product__hover">
-                            <li><a href="public/uploads/product/{{$pro->product_image}}" class="image-popup"><span class="arrow_expand"></span></a></li>
+                            <li>
+                                <a href="public/uploads/product/{{$pro->product_image}}" class="image-popup"><span class="arrow_expand"></span></a>
+                            </li>
                             <li><a href="{{ URL::to('/save-cart/'.$pro->product_id)}}"><span class="icon_bag_alt"></span></a></li>
                         </ul>
                     </div>

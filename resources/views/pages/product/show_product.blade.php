@@ -46,7 +46,8 @@
                         @foreach($product as $key => $pro)
                             <div class="col-md-4 col-sm-6" id="">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg img-fluid" data-setbg="{{asset('public/uploads/product/'.$pro->product_image)}}">
+                                    <div class="product__item__pic set-bg img-fluid" data-setbg="public/uploads/product/{{$pro->product_image}}">
+{{--                                    <div class="product__item__pic set-bg img-fluid" data-setbg="{{asset('public/uploads/product/'.$pro->product_image)}}">--}}
                                         @if(floor(abs(strtotime(date_format(date_create($pro->created_at),"d/m/Y")) - strtotime(date_format(date_create($now),"d/m/Y"))) / (60*60*24))<10)
                                             <div class="label new">
                                                 Mới

@@ -27,15 +27,17 @@
                         </thead>
                         <tbody>
                         <?php
-//                        if (substr("url()->full()", -1)>=1){
-                            $pages = 6;
-                            $a = substr(url()->full(), -1)*$pages-$pages-1;
-//                        }
-//                        else{
-//                            $a = 1;
-//                        }
+                        if (substr(strstr(url()->full(), '='),1)>1){
+                            $a = substr(strstr(url()->full(), '='),1)*20-(20-1);
+                        }
+                        elseif(substr(strstr(url()->full(), '='),1)<1){
+                            $a = 1;
+                        }
+                        else{
+                            $a = 1;
+                        }
                         ?>
-                        {{$a}}
+                        {{substr(strstr(url()->full(), '='),1)}}
                         @foreach($all_product as $key => $pro)
                         <tr>
                             <td data-label="STT">{{$a++}}</td>
@@ -61,23 +63,6 @@
                         @endforeach
                         </tbody>
                     </table>
-{{--                    <div class="pagination__wrapper">--}}
-{{--                        <?php--}}
-{{--                            $next = $all_product->currentPage() + 1;--}}
-{{--                            $prev = $all_product->currentPage() - 1;--}}
-{{--                        ?>--}}
-{{--                        <div class="pagination pagination-style-three m-t-20">--}}
-{{--                            <a href="#"><i class="fa fa-angle-double-left"></i></a>--}}
-{{--                            <a href="#"><i class="fa fa-angle-left"></i></a>--}}
-{{--                            <a href="#" class="selected">1</a>--}}
-{{--                            <a href="#">2</a>--}}
-{{--                            <a href="#">3</a>--}}
-{{--                            <a href="#">4</a>--}}
-{{--                            <a href="#">5</a>--}}
-{{--                            <a href="#"><i class="fa fa-angle-right"></i></a>--}}
-{{--                            <a href="#"><i class="fa fa-angle-double-right"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                     <div class="pagination__wrapper">
                         <div class="pagination pagination-style-three m-t-20">
                             <?php

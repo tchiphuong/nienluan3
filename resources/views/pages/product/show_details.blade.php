@@ -84,7 +84,7 @@
                         @endif
 
 {{--                        <div class="product__details__price">{{number_format($value->product_price).' '.'đ'}}<span>{{number_format($value->product_price).' '.'đ'}}</span></div>--}}
-                        <p>{{$value->product_content}}</p>
+                        <p style="max-width: 555px;word-wrap: break-word; text-align: justify;text-indent: 50px;">{{$value->product_content}}</p>
                         <form action="{{URL::to('/save-cart')}}" method="POST">
                             {{ csrf_field() }}
                             <div class="product__details__button">
@@ -95,7 +95,11 @@
                                         <input name="productid_hidden" type="hidden"  value="{{$value->product_id}}" />
                                     </div>
                                 </div>
-                                <button type="submit" class="cart-btn"><span class="icon_bag_alt"></span> Thêm vào giỏ hàng</button>
+                                @if($value->product_quantity==0)
+                                <div class="cart-btn" style="background: #181818;"><span class="icon_bag_alt"></span> Đã hết hàng</div>
+                                @else
+                                    <button type="submit" class="cart-btn"><span class="icon_bag_alt"></span> Thêm vào giỏ hàng</button>
+                                @endif
                             </div>
                         </form>
                         <div class="product__details__widget">
@@ -169,7 +173,7 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <h6>Mô tả</h6>
-                                <p>{{$value->product_desc}}</p>
+                                <p style="word-wrap: break-word; text-align: justify;text-indent: 50px;">{{$value->product_desc}}</p>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <h6>Đánh giá</h6>
@@ -199,7 +203,19 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="{{URL::to('/public/uploads/product/'.$relate->product_image)}}">
-                            <div class="label new">New</div>
+                            @if(floor(abs(strtotime(date_format(date_create($relate->created_at),"d/m/Y")) - strtotime(date_format(date_create(Carbon\Carbon::now()),"d/m/Y"))) / (60*60*24))<10)
+                                <div class="label new">
+                                    Mới
+                                </div>
+                            @elseif($relate->product_discount>0)
+                                <div class="label sale">
+                                    - {{$relate->product_discount}} %
+                                </div>
+                            @elseif($relate->product_quantity==0)
+                                <div class="label stockout">
+                                    Hết hàng
+                                </div>
+                            @endif
                             <ul class="product__hover">
                                 <li><a href="{{URL::to('/public/uploads/product/'.$relate->product_image)}}" class="image-popup"><span class="arrow_expand"></span></a></li>
                                 <li><a href="#"><span class="icon_bag_alt"></span></a></li>

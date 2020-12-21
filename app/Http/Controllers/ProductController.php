@@ -39,7 +39,7 @@ class ProductController extends Controller
 //            ->join('tbl_category_product','tbl_category_product.category_id','=','tbl_product.category_id')
 //            ->join('tbl_brand_product','tbl_brand_product.brand_id','=','tbl_product.brand_id')
             ->orderby('tbl_product.product_id','desc')->get();
-        $all_product = product::orderby('product_id','desc')->paginate(6);
+        $all_product = product::orderby('product_id','desc')->paginate(20);
         $date = DB::table('tbl_product')->get();
         foreach ($date as $key => $value){
             $date_update = $value->updated_at;
@@ -186,11 +186,6 @@ class ProductController extends Controller
             return Redirect::to('all-product');
         }
 
-
-
-//        echo $new_image."<br>";
-//        echo $new_image2."<br>";
-//        echo $new_image3."<br>";
         DB::table('tbl_product')->where('product_id',$product_id)->update($data);
         Session::put('message','Sản phẩm đã được cập nhật');
         return Redirect::to('all-product');
@@ -209,12 +204,6 @@ class ProductController extends Controller
 
         foreach($details_product as $key => $value){
             $category_id = $value->category_id;
-//            //seo
-//            $meta_desc = $value->product_desc;
-//            $meta_keywords = $value->product_id;
-//            $meta_title = $value->product_name;
-//            $url_canonical = $request->url();
-//            //--seo
         }
 
         $related_product = DB::table('tbl_product')
@@ -246,4 +235,78 @@ class ProductController extends Controller
         $all_product= product::all()->where('product_status','1')->sortDesc();
         $all_product = product::paginate(2);
     }
+
+
+    public function pro_random(){
+        $this->AuthLogin();
+        $data = array();
+        $img=array();
+        $dir = "public/uploads/product/";
+
+        $random = $this->generateRandomString();
+        $random2 = $this->generateRandomString();
+        $random3 = $this->generateRandomString();
+        for ($i=0;$i<=800;$i++) {
+
+            if (is_dir($dir)){
+                if ($dh = opendir($dir)){
+                    while (($file = readdir($dh)) !== false){
+//                        echo "filename:" . $file . "<br>";
+                        array_push($img,$file);
+                    }
+                    closedir($dh);
+                }
+            }
+            $random_keys=array_rand($img,3);
+
+            $cate_product = DB::table('tbl_category_product')->inRandomOrder()->limit(1)->get();
+            $brand_product = DB::table('tbl_brand_product')->inRandomOrder()->limit(1)->get();
+        $data['product_name']=$this->generateRandomString();
+        $data['product_price']=rand(100000,5000000);
+        $data['product_discount']=rand(0,100);
+        $data['product_size']="S";
+        $data['product_color']="Trắng";
+        $data['product_desc']=$this->generateRandomString(300);
+        $data['product_content']=$this->generateRandomString(300);
+        $data['product_quantity']=rand(0,100);
+
+            $get_image = $this->generateRandomString()."jpg";
+            $get_image2 = $this->generateRandomString()."jpg";
+            $get_image3 = $this->generateRandomString().".jpg";
+        foreach ($cate_product as $key => $value){
+            $data['category_id'] = $value->category_id;
+        }
+        foreach ($brand_product as $key => $value){
+            $data['brand_id']  =$value->brand_id;
+        }
+        $data['product_status']=rand(0,1);
+        $data['created_at']=Carbon::now();
+        $data['updated_at'] = Carbon::now();
+            if($get_image){
+                $new_image =  $random.'.'."jpg";
+                $new_image2 =  $random2.'.'."jpg";
+                $new_image3 =  $random3.'.'."jpg";
+//                echo $new_image;
+//                $data['product_image'] = $new_image;
+//                $data['product_image2'] = $new_image2;
+//                $data['product_image3'] = $new_image3;
+                $data['product_image'] = $img[$random_keys[0]];
+                $data['product_image2'] = $img[$random_keys[1]];
+                $data['product_image3'] = $img[$random_keys[2]];
+                DB::table('tbl_product')->insert($data);
+            }
+//        DB::table('tbl_product')->insert($data);
+//            echo $i;
+            echo "<pre>";
+            print_r($data) ;
+            echo "</pre>";
+
+// Open a directory, and read its contents
+
+//            echo $img[$random_keys[0]]."<br>";
+//            echo "<br>";
+//            dd($img);
+        }
+    }
 }
+
